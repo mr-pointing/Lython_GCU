@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Home{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="col1">
+            <div class="spacer" style="height: 48px;"></div> <!-- Adjust the multiplier for different spacing -->
+            <h1>Python Tutor</h1>
+            <form method="POST">
+                <textarea name="user_question" placeholder="What do you need help with {{ name }}?" rows="10"></textarea>
+                <button type="submit">Ask</button>
+            </form>
+        </div>
+        <div class="col2">
+            <div class="spacer" style="height: 96px;"></div> <!-- Adjust the multiplier for different spacing -->
+            <div class="bot-response">{{ bot_response | safe }}</div>
+        </div>
+    </div>
+{% endblock %}

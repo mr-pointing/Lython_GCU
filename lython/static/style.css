@@ -1,9 +1,9 @@
-html { font-family: sans-serif; background: #eee; padding: 1rem; }
-
-h1 { font-family: serif; color: #377ba8; margin: 1rem 0; }
-a { color: #377ba8; }
+html {  background: #eee; padding: 1rem; }
+body { font-family: "B612 Mono", monospace; font-weight: 400; font-style: normal; }
+h1 { font-family: "B612 Mono", monospace; font-weight: 400; font-style: normal; color: #59118E; margin: 1rem 0; }
+a { color: #59118E; }
 hr { border: none; border-top: 1px solid lightgray; }
-nav { background: lightgray; display: flex; align-items: center; padding: 0 0.5rem; }
+nav { background: #FBB825; display: flex; align-items: center; padding: 0 0.5rem; }
 nav h1 { flex: auto; margin: 0; }
 nav h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }
 nav ul  { display: flex; list-style: none; margin: 0; padding: 0; }
@@ -11,12 +11,7 @@ nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
 .content { padding: 0 1rem 1rem; }
 .content > header { border-bottom: 1px solid lightgray; display: flex; align-items: flex-end; }
 .content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
-.flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 1px solid #377ba8; }
-.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
-.post > header > div:first-of-type { flex: auto; }
-.post > header h1 { font-size: 1.5em; margin-bottom: 0; }
-.post .about { color: slategray; font-style: italic; }
-.post .body { white-space: pre-line; }
+.flash { margin: 1em 0; padding: 1em; background: black; border: 1px solid #FBB825; }
 .content:last-child { margin-bottom: 0; }
 .content form { margin: 1em 0; display: flex; flex-direction: column; }
 .content label { font-weight: bold; margin-bottom: 0.5em; }
@@ -24,33 +19,10 @@ nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
 .content textarea { min-height: 12em; resize: vertical; }
 input.danger { color: #cc2f2e; }
 input[type=submit] { align-self: start; min-width: 10em; }
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.col1, .col2 {
-    flex: 1;
-}
-
-textarea {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-button {
-    cursor: pointer;
-}
-
-.spacer {
-    height: 48px; /* This is just an example, adjust as needed */
-}
-
-.bot-response {
-    white-space: pre-wrap; /* Preserves formatting of bot's response */
-}
+.container {  display: flex; justify-content: space-between; }
+.col1, .col2 { flex: 1; }
+textarea { width: 100%;  margin-bottom: 20px; }
+button { cursor: pointer; max-width: 100px;}
+.spacer { height: 48px; }
+.bot-response {  white-space: pre-wrap; font-family: "Assistant", sans-serif; font-optical-sizing: auto;
+    font-weight: 400; font-style: normal; padding: 25px;}

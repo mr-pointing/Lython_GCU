@@ -17,5 +17,5 @@ CREATE TABLE ChatResponses (
     temperature DECIMAL,
     max_tokens INT,
     top_p DECIMAL,
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+    FOREIGN KEY (user_id) REFERENCES user(id)
 );

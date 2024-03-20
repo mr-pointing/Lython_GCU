@@ -14,7 +14,7 @@ from lython.db import get_db
 bp = Blueprint('chat', __name__)
 
 
-openai.api_key = 'OPEN-API-KEY'
+openai.api_key = 'OPENAI_API_KEY'
 temp = 0.3
 max_t = 1000
 model_type = "gpt-3.5-turbo"
@@ -43,6 +43,8 @@ def get_prompt_python():
         Tell me what kind of problem I am having, and help me understand without explaining any code to me. 
         If you're going to use any code examples, please use different variable names, and under no circumstances should you
         give me the answer. After explaining my problem, demonstrate how to properly use the advice given.
+        
+        Also, before each snippet of code, put <pre><code> before it and </code></pre> after.
 
         My Question:
 
@@ -60,15 +62,17 @@ def index():
 
     if request.method == 'POST':
         user_question = request.form['user_question']
-        bot_response = ask_python_question(user_question)
+
 
         if not user_question:
             error = "Need to ask a question first."
+        else:
+            bot_response = ask_python_question(user_question)
 
         if not name:
             error = "Need to log-in first."
 
-        if error is None:
+        if error is None and name:
             try:
                 response_timestamp = datetime.datetime.now().isoformat()
                 db.execute(
@@ -81,6 +85,7 @@ def index():
                 db.commit()
             except Exception as e:
                 error = str(e)
-        flash(error)
+        else:
+            flash(error)
 
     return render_template('chat/index.html', name=name, bot_response=bot_response)

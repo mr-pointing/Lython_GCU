@@ -1,6 +1,6 @@
 # -------- R. Pointing
 # -------- GCU Final Project
-# -------- __init__ file, stores the application factory
+# -------- Authorization file, stores the login and logout methods
 import functools
 from flask import(
     Blueprint, flash, g, redirect, render_template, request, session, url_for
@@ -35,7 +35,8 @@ def register():
                 error = f'Username {username} already exists.'
             else:
                 return redirect(url_for('auth.login'))
-        flash(error)
+        else:
+            flash(error)
     return render_template('auth/register.html')
 
 # Login form

@@ -8,11 +8,10 @@ CREATE TABLE user (
 );
 
 CREATE TABLE ChatResponses (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INT NOT NULL,
     input_prompt TEXT NOT NULL,
     response_text TEXT NOT NULL,
-    response_timestamp TIMESTAMP NOT NULL,
     model_used VARCHAR(50),
     temperature DECIMAL,
     max_tokens INT,

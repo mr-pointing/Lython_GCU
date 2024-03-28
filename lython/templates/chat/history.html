@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}History{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    {% for chat in chat_history %}
+        <div>
+            <div>Question: {{ chat['input_prompt'] }}</div>
+            <div class="bot-response">Response: {{ chat['response_text'] | safe}}</div>
+        </div>
+    {% else %}
+        <p>No chat history found.</p>
+    {% endfor %}
+{% endblock %}
+

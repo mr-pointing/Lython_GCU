@@ -14,7 +14,7 @@ from lython.db import get_db
 bp = Blueprint('chat', __name__)
 
 
-openai.api_key = 'OPENAI_API_KEY'
+openai.api_key = 'OPEN-AI-API-KEY'
 temp = 0.3
 max_t = 1000
 model_type = "gpt-3.5-turbo"
@@ -74,13 +74,15 @@ def index():
 
         if error is None and name:
             try:
-                response_timestamp = datetime.datetime.now().isoformat()
+                # For whatever reason, using response_timestamp causes an error
+                # when trying to display all responses, so for now leaving this out
+                # response_timestamp = datetime.datetime.now().isoformat()
                 db.execute(
                     "INSERT INTO ChatResponses(user_id, input_prompt, response_text,"
-                    "response_timestamp, model_used, temperature, max_tokens) "
-                    "VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    "model_used, temperature, max_tokens) "
+                    "VALUES (?, ?, ?, ?, ?, ?)",
                     (session['user_id'], user_question, bot_response,
-                     response_timestamp, model_type, temp, max_t),
+                     model_type, temp, max_t),
                 )
                 db.commit()
             except Exception as e:
@@ -89,3 +91,23 @@ def index():
             flash(error)
 
     return render_template('chat/index.html', name=name, bot_response=bot_response)
+
+# Function to collect all chat history
+def get_chat_history(user_id):
+    db = get_db()
+    chat_history = db.execute(
+        'SELECT input_prompt, response_text'
+        ' FROM ChatResponses WHERE user_id = ?',
+        (user_id,)
+    ).fetchall()
+    return chat_history
+
+@bp.route('/history')
+def history():
+    if g.user is not None:
+        user_id = g.user['id']
+        chat_history = get_chat_history(user_id)
+        return render_template('chat/history.html', chat_history=chat_history)
+    else:
+        flash('You need to login to view chat history.')
+        return redirect(url_for('auth.login'))

@@ -2,6 +2,7 @@ html {  background: #eee; padding: 1rem; }
 body { font-family: "B612 Mono", monospace; font-weight: 400; font-style: normal; }
 h1 { font-family: "B612 Mono", monospace; font-weight: 400; font-style: normal; color: #59118E; margin: 1rem 0; }
 a { color: #59118E; }
+input {max-width: 50%; }
 hr { border: none; border-top: 1px solid lightgray; }
 nav { background: #FBB825; display: flex; align-items: center; padding: 0 0.5rem; }
 nav h1 { flex: auto; margin: 0; }
@@ -11,7 +12,7 @@ nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
 .content { padding: 0 1rem 1rem; }
 .content > header { border-bottom: 1px solid lightgray; display: flex; align-items: flex-end; }
 .content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
-.flash { margin: 1em 0; padding: 1em; background: black; border: 1px solid #FBB825; }
+.flash { margin: 1em 0; padding: 1em; background: white; border: 1px solid #FBB825; }
 .content:last-child { margin-bottom: 0; }
 .content form { margin: 1em 0; display: flex; flex-direction: column; }
 .content label { font-weight: bold; margin-bottom: 0.5em; }

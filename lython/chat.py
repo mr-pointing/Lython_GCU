@@ -16,7 +16,7 @@ bp = Blueprint('chat', __name__)
 
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
-temp = 0.3
+temp = 0.0001
 max_t = 1000
 model_type = "gpt-3.5-turbo"
 

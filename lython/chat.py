@@ -6,6 +6,7 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, session, request, url_for
 )
 import openai
+import os
 import datetime
 from werkzeug.exceptions import abort
 from lython.auth import login_required
@@ -14,7 +15,7 @@ from lython.db import get_db
 bp = Blueprint('chat', __name__)
 
 
-openai.api_key = 'OPEN-AI-API-KEY'
+openai.api_key = os.getenv('OPENAI_API_KEY')
 temp = 0.3
 max_t = 1000
 model_type = "gpt-3.5-turbo"

@@ -1,9 +1,10 @@
-3/12/24
+4/3/24
 
 To use:
 
-1) Install Flask (pip install flask)
-2) Use OpenAPI key (put on line 17 of chat.py)
-3) From venv, run "flask --app lython init-db"
-4) After db created, run "flask --app lython run"
-5) Visit http://127.0.0.1:5000/auth/login to start
+1) Start a venv
+2) Run: pip install -i https://test.pypi.org/simple/ lython==1.0.0
+2) Run: pip install openai
+3) Run: flask --app lython init-db
+4) Run: flask --app lython run
+5) Visit the link it provides, or http://127.0.0.1:5000/auth/register to start

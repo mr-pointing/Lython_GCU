@@ -1,0 +1,20 @@
+[project]
+name = "lython"
+version = "1.0.0"
+authors = [
+  { name="Richie Pointing", email="rpointing97@gmail.com" },
+]
+description = "A Flask application for learning and interacting with Python concepts."
+dependencies = [
+    "flask",
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"

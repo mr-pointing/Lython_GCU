@@ -6,13 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant&family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <!-- Include the Highlight.js library -->
     <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.3.1/dist/highlight.js"></script>
-    <!-- Include a Highlight.js theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.3.1/dist/styles/default.min.css">
-    <!-- Initialize Highlight.js -->
     <script>hljs.highlightAll();</script>
-
 </head>
 <body>
 <nav>
@@ -22,6 +18,7 @@
         {% if g.user %}
             <li><span>{{ g.user['username'] }}</span></li>
             <li><a href="{{ url_for('chat.history') }}">History</a>
+             <li><a href="{{ url_for('rag_chat.rag_chat') }}">RAG</a>
         <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
         {% else %}
         <li><a href="{{ url_for('auth.register') }}">Register</a>

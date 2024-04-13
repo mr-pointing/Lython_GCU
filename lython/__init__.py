@@ -36,4 +36,7 @@ def create_app(test_config=None):
     app.register_blueprint(chat.bp)
     app.add_url_rule('/', endpoint='index')
 
+    from . import rag_chat
+    app.register_blueprint(rag_chat.bp)
+
     return app

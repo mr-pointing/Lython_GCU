@@ -18,3 +18,10 @@ classifiers = [
 [build-system]
 requires = ["flit_core<4"]
 build-backend = "flit_core.buildapi"
+
+[tool.pytest.ini_ooptions]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["lython"]

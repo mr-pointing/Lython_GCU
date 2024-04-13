@@ -27,3 +27,5 @@ button { cursor: pointer; max-width: 100px;}
 .spacer { height: 48px; }
 .bot-response {  white-space: pre-wrap; font-family: "Assistant", sans-serif; font-optical-sizing: auto;
     font-weight: 400; font-style: normal; padding: 25px;}
+.rag-response {  white-space: pre-wrap; font-family: "Assistant", sans-serif; font-optical-sizing: auto;
+    font-weight: 400; font-style: normal; padding: 25px;}

@@ -2,7 +2,7 @@
 # -------- GCU Final Project
 # -------- Authorization file, stores the login and logout methods
 import functools
-from flask import(
+from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -23,6 +23,11 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
+        else:
+            existing_user = db.execute("SELECT id FROM user WHERE username = ?", (username, )).fetchone()
+
+            if existing_user:
+                error = 'Username already exists.'
 
         if error is None:
             try:
@@ -32,7 +37,7 @@ def register():
                 )
                 db.commit()
             except db.IntegrityError:
-                error = f'Username {username} already exists.'
+                error = 'Username already exists.'
             else:
                 return redirect(url_for('auth.login'))
         else:

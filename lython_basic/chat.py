@@ -9,8 +9,8 @@ import openai
 import os
 import datetime
 from werkzeug.exceptions import abort
-from lython.auth import login_required
-from lython.db import get_db
+from lython_basic.auth import login_required
+from lython_basic.db import get_db
 
 bp = Blueprint('chat', __name__)
 

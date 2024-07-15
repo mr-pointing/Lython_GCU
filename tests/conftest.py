@@ -4,8 +4,8 @@
 import os
 import tempfile
 import pytest
-from lython import create_app
-from lython.db import get_db, init_db
+from lython_basic import create_app
+from lython_basic.db import get_db, init_db
 
 with open(os.path.join(os.path.dirname(__file__), 'data.sql'), 'rb') as f:
     _data_sql = f.read().decode('utf-8')

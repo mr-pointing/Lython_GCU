@@ -5,7 +5,7 @@
 from flask import (
     Blueprint, flash, g, redirect, render_template, session, request, url_for
 )
-from lython.db import get_db
+from lython_basic.db import get_db
 from langchain_community.document_loaders import UnstructuredURLLoader
 from langchain_openai import ChatOpenAI
 from langchain.chains import (

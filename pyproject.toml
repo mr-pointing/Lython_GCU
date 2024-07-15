@@ -1,8 +1,8 @@
 [project]
-name = "lython"
+name = "lython_basic"
 version = "1.0.2"
 authors = [
-  { name="Richie Pointing", email="rpointing97@gmail.com" },
+  { name="Richard Pointing", email="rpointing97@gmail.com" },
 ]
 description = "A Flask application for learning and interacting with Python concepts."
 dependencies = [
@@ -24,7 +24,7 @@ testpaths = ["tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["lython"]
+source = ["lython_basic"]
 
 [project.urls]
 Homepage = 'https://github.com/mr-pointing/Lython_GCU'

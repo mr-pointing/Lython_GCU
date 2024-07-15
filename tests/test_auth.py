@@ -4,7 +4,7 @@
 
 import pytest
 from flask import g, session
-from lython.db import get_db
+from lython_basic.db import get_db
 
 def test_register(client, app):
 

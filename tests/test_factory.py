@@ -1,7 +1,7 @@
 # -------- R. Pointing
 # -------- GCU Final Project
 # -------- Testing factory file
-from lython import create_app
+from lython_basic import create_app
 
 def test_config():
     assert not create_app().testing

@@ -15,13 +15,13 @@ use regular Chat-GPT, which would just give them answers.
 From a virtual environment, run the following commands;
 
 ```bash
-pip install -i https://test.pypi.org/simple/ lython==1.0.1
+pip pip install lython-basic
 
 pip install openai
 
-flask --app lython init-db
+flask --app lython_basic init-db
 
-flask --app lython run 
+flask --app lython_basic run 
 ```
 
 You can then visit the link it provides you, or http://127.0.0.1:5000/auth/register to start

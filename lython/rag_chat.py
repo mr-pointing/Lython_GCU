@@ -52,7 +52,8 @@ rag_pt = PromptTemplate(
     input_variables = ['answer'],
     template = """Given the information {answer}, help the user get a start on their question. 
      
-     If the source info returns some instructions, give me some very basic sample code to help me start, no
+     If the source info returns some instructions, give me some advice on what concepts I should know, and write some
+     very basic sample code to help me start, no
      more than 5 lines of code.   
      
      

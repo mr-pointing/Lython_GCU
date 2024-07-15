@@ -64,16 +64,15 @@ def index():
     if request.method == 'POST':
         user_question = request.form['user_question']
 
-
-        if not user_question:
+        if not name:
+            error = "Need to log-in first."
+        elif not user_question:
             error = "Need to ask a question first."
         else:
             bot_response = ask_python_question(user_question)
 
-        if not name:
-            error = "Need to log-in first."
 
-        if error is None and name:
+        if error is None:
             try:
                 # For whatever reason, using response_timestamp causes an error
                 # when trying to display all responses, so for now leaving this out
@@ -87,7 +86,7 @@ def index():
                 )
                 db.commit()
             except Exception as e:
-                error = str(e)
+                flash(e)
         else:
             flash(error)
 

@@ -1,12 +1,17 @@
 [project]
 name = "lython_basic"
-version = "1.0.2"
+version = "1.0.3"
 authors = [
   { name="Richard Pointing", email="rpointing97@gmail.com" },
 ]
 description = "A Flask application for learning and interacting with Python concepts."
+readme = "README.md"
 dependencies = [
     "flask",
+    "openai",
+    "langchain_openai",
+    "unstructured",
+    "pandas",
 ]
 requires-python = ">=3.8"
 classifiers = [

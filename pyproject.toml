@@ -12,6 +12,8 @@ dependencies = [
     "langchain_openai",
     "unstructured",
     "pandas",
+    "faiss-cpu",
+    "langchain_community",
 ]
 requires-python = ">=3.8"
 classifiers = [
